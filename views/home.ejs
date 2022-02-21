@@ -1,9 +1,33 @@
 <%- include("partials/header"); %>
 <div class="container-md">
-<h1>HIiIIIIii</h1>
-</div>
-<% for(var i =1; i < 8; i++){ %>
-    <%- include("partials/order");%>
+
+<% if(sortStatus){ %>    
+    <h1>Cooking</h1>
+    <% for(var i =1; i < 8; i++){ %>
+        <%- include("partials/order");%>
+    <% } %>
+
+    <h1>Queue</h1>
+    <% for(var i =1; i < 8; i++){ %>
+        <%- include("partials/order");%>
+    <% } %>
+
+    <h1>Served</h1>
+    <% for(var i =1; i < 8; i++){ %>
+        <%- include("partials/order");%>
+    <% } %>
+
+    <h1>Canceled</h1>
+    <% for(var i =1; i < 8; i++){ %>
+        <%- include("partials/order");%>
+    <% } %>
+    
+<% }else{ %>
+
+    <% for(var i =1; i < 8; i++){ %>
+        <%- include("partials/order");%>
+    <% } %>
 <% } %>
 
+</div>
 <%- include("partials/footer") %>
