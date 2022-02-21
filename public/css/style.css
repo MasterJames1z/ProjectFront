@@ -1,0 +1,22 @@
+#navigate{
+    background-color: darkolivegreen;
+}
+#restaurantName{
+    color: white;
+    text-align: center;
+   
+}
+#orderBox{
+    background-color: whitesmoke; 
+    border-radius: 5px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+body{
+    background-color: lightgray;
+}
+.pic{
+    width: 25%;
+    height: auto;
+    padding: 0 0 0 0 ;
+}
