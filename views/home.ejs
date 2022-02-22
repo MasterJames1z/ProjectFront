@@ -1,33 +1,31 @@
 <%- include("partials/header"); %>
-<div class="container-md">
 
-<% if(sortStatus){ %>    
-    <h1>Cooking</h1>
-    <% for(var i =1; i < 8; i++){ %>
-        <%- include("partials/order");%>
-    <% } %>
 
-    <h1>Queue</h1>
-    <% for(var i =1; i < 8; i++){ %>
-        <%- include("partials/order");%>
-    <% } %>
+<% if(sort){ %>
 
-    <h1>Served</h1>
-    <% for(var i =1; i < 8; i++){ %>
-        <%- include("partials/order");%>
-    <% } %>
+    <div class="container-md"><h1>Cooking</h1></div>
+    <% orderList.forEach( function(orderList){ %>
+        <%- include("partials/order",{ orderInfo: orderList });%>
+    <% }); %>
+    <div class="container-md"><h1>Queue</h1></div>
+    <% orderList.forEach( function(orderList){ %>
+        <%- include("partials/order",{ orderInfo: orderList });%>
+    <% }); %>
+    <div class="container-md"><h1>Served</h1></div>
+    <% orderList.forEach( function(orderList){ %>
+        <%- include("partials/order",{ orderInfo: orderList });%>
+    <% }); %>
+    <div class="container-md"><h1>Canceled</h1></div>
+    <% orderList.forEach( function(orderList){ %>
+        <%- include("partials/order",{ orderInfo: orderList });%>
+    <% }); %>
 
-    <h1>Canceled</h1>
-    <% for(var i =1; i < 8; i++){ %>
-        <%- include("partials/order");%>
-    <% } %>
-    
 <% }else{ %>
 
-    <% for(var i =1; i < 8; i++){ %>
-        <%- include("partials/order");%>
-    <% } %>
+    <% orderList.forEach( function(orderList){ %>
+        <%- include("partials/order",{ orderInfo: orderList });%>
+    <% }); %>
 <% } %>
 
-</div>
+
 <%- include("partials/footer") %>

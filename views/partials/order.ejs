@@ -1,23 +1,29 @@
 <div  style="margin: 8px 0 8px;">
-    <div class="container justify-content-center" id="orderBox"><!-- <<  order box-->
+    <div class="container justify-content-center orderBox" id=""><!-- <<  order box-->
         <div class="row justify-content-center">
             <div class="row col-md-10 col-xs-12" >
                 <h1 class="col-6 ">Table 8</h1>
-                <p class="col-6" style="text-align: right;">status: cooking</p>
+                <p class="col-6" style="text-align: right;">status: <span class="<%= orderInfo.status %>"><%= orderInfo.status %></span></p>
             </div>
             <div class="row col-md-10 col-xs-12 justify-content-center">
 
                 <img src="IMG_1893.jpg" class="col-3 pic">
                 <div class="col-8">
                     <!-- order list -->
-                    <p class="menuName">yummmmmmmm</p>
-                    <p>nnainimin</p>
-                    <p>ddddddddń</p>
+                    <p class="menuName"><%= orderInfo.menuName %></p>
+                    <ul>
+                        <% orderInfo.remark.forEach(function(remark){ %>
+                            <li><%= remark %></li>
+                        <% }); %>
+                    </ul>
                 </div>
                 <div class="col-1">
                     <p>xN</p>
                 </div>
 
+            </div>
+            <div class="row col-md-10 col-xs-12 justify-content-end">
+               <button type="button" class="btn changeBtn">Change status</button>               
             </div>
         </div>
     </div>

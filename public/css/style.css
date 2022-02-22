@@ -6,7 +6,7 @@
     text-align: center;
    
 }
-#orderBox{
+.orderBox{
     background-color: whitesmoke; 
     border-radius: 5px;
     padding-top: 25px;
@@ -21,5 +21,19 @@ body{
     padding: 0 0 0 0 ;
 }
 .menuName{
-    
+    font-size: xx-large;
+}
+.cooking{
+    background-color: coral;
+    border-radius: 5px;
+}
+.queue{
+    background-color: aqua;
+    border-radius: 5px;
+}
+.changeBtn{
+    width: fit-content;
+    background-color: darkolivegreen;
+    color: white;
+    border-radius: 5px;
 }
