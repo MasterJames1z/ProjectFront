@@ -1,0 +1,75 @@
+<%- include("partials/header"); %>
+
+<div class="container" style="text-align: right;">
+    <p class="sorter">sort by: 
+        <a class="sorter" href="/resort" > 
+            <% if(sort){ %>status <% }else{ %>date <% } %>
+        </a>
+    </p>
+</div>
+
+<% if(sort){ %>
+    <!-- sort by status -->
+    <% var unavailable = true %> <!-- tracker -->
+
+    <div class="container-md">
+        <h1>Cooking</h1>
+    </div>
+    <% orderList.forEach( function(orderList){ %>
+        <% if(orderList.status == "cooking"){ %>
+            <%- include("partials/order",{ orderInfo: orderList });%>
+            <% unavailable = false %> <!-- set tracker -->
+        <% } %>
+    <% }); %>
+    <% if(unavailable){ %> <!-- check tracker -->
+        <p class="noOrder">There is no order in this category</p>
+    <% }else{ unavailable = true } %> <!-- reset tracker -->
+
+    <div class="container-md">
+        <h1>Queue</h1>
+    </div>
+    <% orderList.forEach( function(orderList){ %>
+        <% if(orderList.status == "queue"){ %>
+            <%- include("partials/order",{ orderInfo: orderList });%>
+            <% unavailable = false %> <!-- set tracker -->
+        <% } %>
+    <% }); %>
+    <% if(unavailable){ %> <!-- check tracker -->
+        <p class="noOrder">There is no order in this category</p>
+    <% }else{ unavailable = true } %> 
+
+    <div class="container-md">
+        <h1>Served</h1>
+    </div>
+    <% orderList.forEach( function(orderList){ %>
+        <% if(orderList.status == "served"){ %>
+            <%- include("partials/order",{ orderInfo: orderList });%>
+            <% unavailable = false %> <!-- set tracker -->
+        <% } %>
+    <% }); %>
+    <% if(unavailable){ %> <!-- check tracker -->
+        <p  class="noOrder">There is no order in this category</p>
+    <% }else{ unavailable = true } %> <!-- reset tracker -->
+
+    <div class="container-md">
+        <h1>Canceled</h1>
+    </div>
+    <% orderList.forEach( function(orderList){ %>
+        <% if(orderList.status == "canceled"){ %>
+            <%- include("partials/order",{ orderInfo: orderList });%>
+            <% unavailable = false %> <!-- set tracker -->
+        <% } %>
+    <% }); %>
+    <% if(unavailable){ %> <!-- check tracker -->
+        <p  class="noOrder">There is no order in this category</p>
+    <% }else{ unavailable = true } %> <!-- reset tracker -->
+
+<% }else{ %>
+    <!-- sort by date -->
+    <% orderList.forEach( function(orderList){ %>
+        <%- include("partials/order",{ orderInfo: orderList });%>
+    <% }); %>
+
+<% } %>
+
+<%- include("partials/footer") %>

@@ -2,7 +2,7 @@
     <div class="container justify-content-center orderBox" id=""><!-- <<  order box-->
         <div class="row justify-content-center">
             <div class="row col-md-10 col-xs-12" >
-                <h1 class="col-6 ">Table 8</h1>
+                <h1 class="col-6 ">Table <%= orderInfo.table %></h1>
                 <p class="col-6" style="text-align: right;">status: <span class="<%= orderInfo.status %>"><%= orderInfo.status %></span></p>
             </div>
             <div class="row col-md-10 col-xs-12 justify-content-center">
@@ -18,12 +18,12 @@
                     </ul>
                 </div>
                 <div class="col-1">
-                    <p>xN</p>
+                    <p>x<%= orderInfo.amount %></p>
                 </div>
 
             </div>
             <div class="row col-md-10 col-xs-12 justify-content-end">
-               <button type="button" class="btn changeBtn">Change status</button>               
+               <button type="submit" class="btn changeBtn">Change status</button>               
             </div>
         </div>
     </div>

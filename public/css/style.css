@@ -26,14 +26,40 @@ body{
 .cooking{
     background-color: coral;
     border-radius: 5px;
+    padding: 0 5px 0 5px;
 }
 .queue{
     background-color: aqua;
     border-radius: 5px;
+    padding: 0 5px 0 5px;
+}
+.canceled{
+    background-color: gray;
+    border-radius: 5px;
+    padding: 0 5px 0 5px;
+}
+.served{
+    background-color: cornflowerblue ;
+    border-radius: 5px;
+    padding: 0 5px 0 5px;
 }
 .changeBtn{
     width: fit-content;
     background-color: darkolivegreen;
     color: white;
     border-radius: 5px;
+}
+.changeBtn:hover{
+    color: lightgray;
+}
+.sorter{
+    color:dimgray;
+    text-decoration: none;
+}
+a.sorter:hover{
+    color: green;
+    text-decoration: underline;
+}
+.noOrder{
+    text-align: center;
 }
