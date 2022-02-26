@@ -1,124 +1,123 @@
-.navbar{
-    background-color: darkolivegreen;
-}
-.navPos{
-    height: 32px;
-}
-#restaurantName{
-    color: white;
-    text-align: center;
-   
-}
-.orderBox{
-    background-color: whitesmoke; 
-    border-radius: 5px;
-    padding-top: 25px;
-    padding-bottom: 25px;
-}
-body{
-    background-color: lightgray;
-    padding: 4.5rem 0 4.5rem;
-}
-.pic{
-    width: 25%;
-    height: auto;
-    padding: 0 0 0 0 ;
-}
-.menuName{
-    font-size: xx-large;
-}
-.cooking{
-    background-color: coral;
-    border-radius: 5px;
-    padding: 0 5px 0 5px;
-}
-.queue{
-    background-color: aqua;
-    border-radius: 5px;
-    padding: 0 5px 0 5px;
-}
-.canceled{
-    background-color: gray;
-    border-radius: 5px;
-    padding: 0 5px 0 5px;
-}
-.served{
-    background-color: cornflowerblue ;
-    border-radius: 5px;
-    padding: 0 5px 0 5px;
-}
-.changeBtn{
-    width: fit-content;
-    background-color: darkolivegreen;
-    color: white;
-    border-radius: 5px;
-}
-.changeBtn:hover{
-    color: lightgray;
-}
-.sorter{
-    color:dimgray;
-    text-decoration: none;
-    margin-bottom: 0;
-}
-a.sorter:hover{
-    color: green;
-    text-decoration: underline;
-}
-.noOrder{
-    text-align: center;
-}
-html{
-    background-color: darkolivegreen;
-}
+/* body */
+    body{
+        background-color: lightgray;
+        padding: 4.5rem 0 4.5rem;
+    }
+    html{
+        background-color: darkolivegreen;
+    }
+    a{
+        text-decoration: none;
+    }
+    a:hover{
+        color: #000;
+    }
 
+/* kitchen UI */
+    .orderBox{
+        background-color: whitesmoke; 
+        border-radius: 5px;
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+    .pic{
+        width: 25%;
+        height: auto;
+        padding: 0 0 0 0 ;
+    }
+    .cooking{
+        background-color: coral;
+        border-radius: 5px;
+        padding: 0 5px 0 5px;
+    }
+    .queue{
+        background-color: aqua;
+        border-radius: 5px;
+        padding: 0 5px 0 5px;
+    }
+    .canceled{
+        background-color: gray;
+        border-radius: 5px;
+        padding: 0 5px 0 5px;
+    }
+    .served{
+        background-color: cornflowerblue ;
+        border-radius: 5px;
+        padding: 0 5px 0 5px;
+    }
+    .changeBtn{
+        width: fit-content;
+        background-color: darkolivegreen;
+        color: white;
+        border-radius: 5px;
+    }
+    .changeBtn:hover{
+        color: lightgray;
+    }
+    .sorter{
+        color:dimgray;
+        text-decoration: none;
+        margin-bottom: 0;
+    }
+    .noOrder{
+        text-align: center;
+    }
+    a.sorter:hover{
+        color: green;
+        text-decoration: underline;
+    }
 
+/* Customer navbar */
+    .navbar{
+        background-color: darkolivegreen;
+    }
+    .navPos{
+        height: 32px;
+    }
+    .nav-link{
+        color: lightgray;
+    }
+    .navbar-toggler{
+        color: darkolivegreen;
+    }
+    .icon{
+        color: white;
+        font-size: x-large;
+    }
+    hr{
+        color: white;
+        margin: 0;
+    }
+    #restaurantName{
+        color: white;
+        text-align: center;
+    }
+    a.icon{
+        color: black;
+        font-size: x-large;
+    }
 
-#title{
-    color: white;
-    background-color: green;
-    background-position-y: 50px;
-    height: 10%;
-    width: 100%;
-    padding: 5px;
-}
+/* Customer UI */
+    .menuImg{
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+    }
+    .menuItem{
+        background-color: white;
+        margin-bottom: 24px;
+    }
+    .price{
+        color: darkgray;
+        text-align: right;
+    }
 
-#set1 .button{
-    width: 90%;
-    height: 70%;
-    margin: auto;
-}
-
-body{
-    /* margin-right: 50%; */
-}
-
-#set1{
-    height: 150px;
-    background-color: aqua;
-}
-
-#set2{
-    height: 150px;
-    background-color: salmon;
-}
-
-#set3{
-    height: 150px;
-    background-color: darkorange;
-}
-
-#set4{
-    height: 150px;
-    background-color: lavender;
-}
-
-#set5{
-    height: 150px;
-    background-color: gold;
-}
-
-#set6{
-    height: 150px;
-    background-color: rebeccapurple;
-}
+/* both UI */
+    .menuName{
+        font-size: xx-large;
+        color: #000;
+    }
+    .nav-link:hover{
+        color: white;
+        text-decoration: underline;
+    }
