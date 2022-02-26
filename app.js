@@ -5,8 +5,8 @@ const { redirect } = require("express/lib/response");
 app.set('view engine', 'ejs');
 app.use(express.static("public"));
 
-var sort = true;
-var orderList = [
+var sort = false;
+var orderList = [ 
     {table: 8, menuName: "ผัดกระเพา", remark: ["หอมมะลิ", "หมูกรอบ", "ไข่ข้น"], status: "cooking", amount: 1}, 
     {table: 5, menuName: "ผัดผัก", remark: ["ไม่ใส่ผัก", "ใส่หมูเยอะๆ"], status: "queue", amount: 2},
     {table: 7, menuName: "ผัดไท", remark: ["ผัดไทเป็นคาร์โบมะ", "กุ้งเยอะ", "ขอถูกๆ"], status: "served", amount: 1},
@@ -16,12 +16,13 @@ var orderList = [
 
 
 app.get("/", function(req,res){
-    res.render("home",{sort: sort, orderList: orderList});
+    res.sendFile(__dirname + "/views/kitchenLogIn.html");
 })
 
 app.get("/resort", function(req,res){
     sort = !sort;
     res.redirect("/");
+    res.render("home",{sort: sort, orderList: orderList});
 })
 
 app.get("/cus", function(req,res){

@@ -1,0 +1,79 @@
+<%- include("partials/cheader"); %>
+<div class="container-md">
+    <section id="title">
+        <div class="container">
+            <div class="row"> 
+                <div class="col-sm-12">
+                    <h1>B&J</h1>
+                </div>
+            </div>   
+        </div>
+    </section>
+
+    <section id="menu">
+        <div class="container">
+            <div class="row">
+            <h2>Combo set</h2>
+            
+            <div id="set1" class="col-sm-6">
+                <p>Set 1</p>
+                <button class="button">
+                </button>
+            </div>
+
+            <div id="set2" class="col-sm-6">
+                <p>Set 2</p>
+            </div>
+
+            <div id="set3"class="col-sm-6">
+                <p>Set 3</p>
+            </div>
+
+            <div id="set4"class="col-sm-6">
+                <p>Set 4</p>
+            </div>
+
+            <div id="set5">
+                <p>Set 5</p>
+            </div>
+
+            <div id="set6">
+                <p>Set 6</p>
+            </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="bar">
+        <div class="container">
+            <div class="row">
+            <div class="col-xs-4 col-sm-4">
+                1
+            </div>
+            <div class="col-xs-4 col-sm-4">
+                2
+            </div>
+            <div class="col-xs-4 col-sm-4">
+                3
+            </div>
+            </div>
+
+        </div>
+        
+
+    </section>
+</div>
+
+<div class="container">
+    <div class="row" >
+    <%- include("partials/menu") %>
+    <%- include("partials/menu") %>
+    <%- include("partials/menu") %>
+    </div>
+</div>
+
+<% orderList.forEach( function(orderList){ %>
+    <%- include("partials/order",{ orderInfo: orderList });%>
+<% }); %>
+<%- include("partials/cFooter") %>

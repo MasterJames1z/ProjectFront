@@ -1,5 +1,8 @@
-#navigate{
+.navbar{
     background-color: darkolivegreen;
+}
+.navPos{
+    height: 32px;
 }
 #restaurantName{
     color: white;
@@ -14,6 +17,7 @@
 }
 body{
     background-color: lightgray;
+    padding: 4.5rem 0 4.5rem;
 }
 .pic{
     width: 25%;
@@ -55,6 +59,7 @@ body{
 .sorter{
     color:dimgray;
     text-decoration: none;
+    margin-bottom: 0;
 }
 a.sorter:hover{
     color: green;
@@ -62,4 +67,58 @@ a.sorter:hover{
 }
 .noOrder{
     text-align: center;
+}
+html{
+    background-color: darkolivegreen;
+}
+
+
+
+#title{
+    color: white;
+    background-color: green;
+    background-position-y: 50px;
+    height: 10%;
+    width: 100%;
+    padding: 5px;
+}
+
+#set1 .button{
+    width: 90%;
+    height: 70%;
+    margin: auto;
+}
+
+body{
+    /* margin-right: 50%; */
+}
+
+#set1{
+    height: 150px;
+    background-color: aqua;
+}
+
+#set2{
+    height: 150px;
+    background-color: salmon;
+}
+
+#set3{
+    height: 150px;
+    background-color: darkorange;
+}
+
+#set4{
+    height: 150px;
+    background-color: lavender;
+}
+
+#set5{
+    height: 150px;
+    background-color: gold;
+}
+
+#set6{
+    height: 150px;
+    background-color: rebeccapurple;
 }
