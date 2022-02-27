@@ -1,12 +1,13 @@
-<%- include("partials/header"); %>
+<%- include("partials/header",{category: menu}); %>
 <div class="container">
 
-    <a>path</a>
-    <h1>Combo set</h1>
-
+    <div class="container"><a>path</a></div>
     <div class="row" >
-        <% menu.forEach(function(menu){ %>
-            <%- include("partials/menu",{ menu: menu }) %>
+        <% menu.forEach(function(category){ %>
+            <h1><%= category.category %></h1>
+            <% category.menuList.forEach(function(menuList){ %>
+                <%- include("partials/menu",{ menu: menuList }) %>
+            <% }); %>
         <% }); %>
     </div>
 </div>

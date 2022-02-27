@@ -4,7 +4,7 @@ const ejs = require("ejs");
 const { redirect } = require("express/lib/response");
 app.set('view engine', 'ejs');
 app.use(express.static("public"));
-
+//kitchen test
 var sort = true;
 var orderList = [ 
     {table: 8, menuName: "ผัดกระเพา", remark: ["หอมมะลิ", "หมูกรอบ", "ไข่ข้น"], status: "cooking", amount: 1}, 
@@ -13,12 +13,26 @@ var orderList = [
     {table: 6, menuName: "ผัดอเวจี", remark: ["ส่งจากท่านยม", "กินชาตินี้อิ่มชาติหน้า"], status: "canceled", amount: 8},
     {table: 3, menuName: "ผัดขี้เมา", remark: ["ใส่แอลกอฮอล์"], status: "queue", amount: 3}
 ];
+//customer test
 var menu = [
-    {menuName: "ผัดกระเพา", imgSource: "IMG_1893.jpg", price: "50฿"},
-    {menuName: "ผัดผัก", imgSource: "IMG_1893.jpg", price: "25฿"},
-    {menuName: "ผัดไท", imgSource: "IMG_1893.jpg", price: "80฿"},
-    {menuName: "ผัดอเวจี", imgSource: "IMG_1893.jpg", price: "666฿"},
-    {menuName: "ผัดขี้เมา", imgSource: "IMG_1893.jpg", price: "50฿"}
+    {category:"Combo set", menuList:[
+        {menuName: "ชุดผัดกระเพา", imgSource: "IMG_1893.jpg", price: "50฿"},
+        {menuName: "ชุดผัดผัก", imgSource: "IMG_1893.jpg", price: "25฿"},
+        {menuName: "ชุดผัดไท", imgSource: "IMG_1893.jpg", price: "80฿"},
+        {menuName: "ชุดผัดอเวจี", imgSource: "IMG_1893.jpg", price: "666฿"},
+        {menuName: "ชุดผัดขี้เมา", imgSource: "IMG_1893.jpg", price: "50฿"}
+    ]},
+    {category:"ผัดนรก", menuList:[
+        {menuName: "ผัดกระเพา", imgSource: "IMG_1893.jpg", price: "50฿"},
+        {menuName: "ผัดผัก", imgSource: "IMG_1893.jpg", price: "25฿"},
+        {menuName: "ผัดไท", imgSource: "IMG_1893.jpg", price: "80฿"},
+        {menuName: "ผัดอเวจี", imgSource: "IMG_1893.jpg", price: "666฿"},
+        {menuName: "ผัดขี้เมา", imgSource: "IMG_1893.jpg", price: "50฿"}
+    ]},
+    {category:"ผัดไม่รู้ๆๆ", menuList:[
+        {menuName: "ผัดไท", imgSource: "IMG_1893.jpg", price: "80฿"},
+        {menuName: "ผัดอเวจี", imgSource: "IMG_1893.jpg", price: "666฿"},
+    ]}
 ];
 
 

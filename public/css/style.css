@@ -76,6 +76,11 @@
     }
     .nav-link{
         color: lightgray;
+        font-size: larger;
+    }
+    .navContent{
+        color: white;
+        font-size: smaller;
     }
     .navbar-toggler{
         color: darkolivegreen;
@@ -119,5 +124,4 @@
     }
     .nav-link:hover{
         color: white;
-        text-decoration: underline;
     }
