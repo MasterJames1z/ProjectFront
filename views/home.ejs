@@ -6,7 +6,7 @@
         <% menu.forEach(function(category){ %>
             <h1><%= category.category %></h1>
             <% category.menuList.forEach(function(menuList){ %>
-                <%- include("partials/menu",{ menu: menuList }) %>
+                <%- include("partials/menu",{ menu: menuList, category: category.category}) %>
             <% }); %>
         <% }); %>
     </div>

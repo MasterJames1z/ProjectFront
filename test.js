@@ -48,8 +48,21 @@ app.get("/kitchen", function(req,res){
     res.render("kitchen", {orderList: orderList, sort: sort});
 })
 
-app.get("/cus", function(req,res){
-
+app.get("/:category/:menuName",function(req,res){
+    var send = {menuName: '"' + req.params.menuName + '" does not exist', imgSource: "no image", price: "--฿", menu: menu}
+    for(var i = 0; i < menu.length; i++){
+        if(menu[i].category == req.params.category){
+            for(var j = 0; j < menu[i].menuList.length; j++){
+                if(menu[i].menuList[j].menuName == req.params.menuName){
+                    send.menuName = menu[i].menuList[j].menuName;
+                    send.imgSource = menu[i].menuList[j].imgSource;
+                    send.price = menu[i].menuList[j].price;
+                    console.log("found");
+                }
+            } 
+        }
+    }
+    res.render("menuInfo", send);
 })
 
 app.listen(3000,function(){

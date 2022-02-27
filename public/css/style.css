@@ -4,7 +4,7 @@
         padding: 4.5rem 0 4.5rem;
     }
     html{
-        background-color: darkolivegreen;
+        background-color: lightgray;
     }
     a{
         text-decoration: none;
@@ -81,6 +81,7 @@
     .navContent{
         color: white;
         font-size: smaller;
+        margin-top: 20px;
     }
     .navbar-toggler{
         color: darkolivegreen;
@@ -101,6 +102,10 @@
         color: black;
         font-size: x-large;
     }
+    .searchBtn{
+        background-color: chocolate;
+        color: white;
+    }
 
 /* Customer UI */
     .menuImg{
@@ -117,7 +122,15 @@
         text-align: right;
     }
 
-/* both UI */
+/* menu info */
+    .menuInfoImg{
+        height: auto;
+    }
+    .infoPrice{
+        text-align: right;
+    }
+
+/* UI */
     .menuName{
         font-size: xx-large;
         color: #000;
