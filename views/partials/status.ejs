@@ -1,0 +1,18 @@
+<div class="container-md order">
+
+<div class="orderN">
+    <p>Order <%= n %></p>
+</div>
+<img class="statusImg" src="../IMG_1893.jpg"/>
+<div class="imgText"><%= order.price %></div>
+<div class="container-md menuStat row">
+    <div class="col-6 statusText">
+        <p><%= order.menuName %></p> 
+    </div>
+    <div class="col-6 statusText status <%= order.status + 'Text' %>">
+        <p><%= order.status %></p> 
+    </div>
+</div>
+<hr class="sepp">
+
+</div>

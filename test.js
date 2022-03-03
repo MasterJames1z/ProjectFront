@@ -30,10 +30,11 @@ var menu = [
         {menuName: "ผัดขี้เมา", imgSource: "IMG_1893.jpg", price: "50฿"}
     ]},
     {category:"ผัดไม่รู้ๆๆ", menuList:[
-        {menuName: "ผัดไท", imgSource: "IMG_1893.jpg", price: "80฿"},
-        {menuName: "ผัดอเวจี", imgSource: "IMG_1893.jpg", price: "666฿"},
+        {menuName: "ผัดฟิชสตอป", imgSource: "IMG_1893.jpg", price: "ไม่ขายนะจ๊ะ"},
+        {menuName: "ผัดป้อมปราการ", imgSource: "IMG_1893.jpg", price: "???฿"},
     ]}
 ];
+var order = [{menuName: "ผัดอเวจี", imgSource: "IMG_1893.jpg", price: "666฿", status: "served"},{menuName: "ผัดขี้เมา", imgSource: "IMG_1893.jpg", price: "50฿", status: "cooking"}];
 
 
 app.get("/", function(req,res){
@@ -63,6 +64,10 @@ app.get("/:category/:menuName",function(req,res){
         }
     }
     res.render("menuInfo", send);
+})
+
+app.get("/order%20status", function(req, res){
+    res.render("status", {order: order, menu: menu});
 })
 
 app.listen(3000,function(){

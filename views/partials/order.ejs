@@ -22,9 +22,11 @@
                 </div>
 
             </div>
-            <div class="row col-md-10 col-xs-12 justify-content-end">
-               <button type="submit" class="btn changeBtn">Change status</button>               
-            </div>
+            <% if(orderInfo.status == "queue" || orderInfo.status == "cooking"){ %>
+                <div class="row col-md-10 col-xs-12 justify-content-end">
+                    <button type="submit" class="btn changeBtn">Change status</button>
+                </div>
+            <% } %>
         </div>
     </div>
 </div>

@@ -4,9 +4,41 @@
         <img class="menuInfoImg col-12 col-md-9" src="../<%= imgSource %>" alt="<% menuName %>">
     </div>
     <div class="menuName row justify-content-center">
-        <p class="col-8 col-md-6"><%= menuName %></p>
+        <p class="col-8 col-md-6 "><%= menuName %></p>
         <p class="infoPrice col-4 col-md-3"><%= price %></p>
     </div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="row col-md-9 col-12 justify-content-center remarkBox">
+                <p class="col-md-10 addRemark">Remark</p>  
+                <div class="col-md-9 col-12">
+                    <!-- from to do list -->
+                    <!-- checkbox = list item id -->
+                    <div class="box">
+                        <form action="/delete" method="post">
+                            <!-- newListItems.forEach(function(newListItems){ -->
+                                <div class="item">
+                                    <input type="checkbox" name="checkbox" onChange="this.form.submit()" value=""/><!-- list item id / "checkbox" -->
+                                    <input type="hidden" name="listName" onChange="this.form.submit()" value=""/><!-- list title -->
+                                    <p class="remark">remark example<!-- newListItems.name --></p>
+                                </div>
+                            <!-- }); -->
+                        </form>
+                    </div>
+                    <div class="box">
+                        <form class="item" action="/" method="post">
+                            <input type="text" name="newItem" placeholder="New item" autocomplete="off"/>
+                            <button class="plusBtn" type="submit" name="list" value="">+</button>
+                        </form>
+                    </div>
+                    <!-- to do list -->
+                </div>
+            </div>
+            <button class="btn col-md-9 col-12 confirm confirmBtn"> Confirm <%= price %> </button>
+        </div>
+    </div>
+
+    
 
 </div>
 

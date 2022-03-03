@@ -1,0 +1,9 @@
+<%- include("partials/header",{category: menu}); %>
+ <div class="container">
+    <h1>Status order</h1>
+</div>
+    <% for(i = 0; i < order.length; i++){ %>
+            <%- include("partials/status", {order: order[i], n: i + 1}); %>
+    <% } %>
+
+<%- include("partials/footer"); %>
