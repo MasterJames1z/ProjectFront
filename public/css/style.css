@@ -165,6 +165,7 @@
 
 /* menu info */
     .menuInfoImg{
+        margin-top: 20px;
         height: auto;
     }
     .addRemark{
@@ -287,9 +288,12 @@
     }
     .imgText{
         position: absolute;
-        bottom: 55px;
+        bottom: 65px;
         right: 40px;
         color: darkgreen;
+    }
+    .queuePrice{
+        bottom: 135px;
     }
     .sepp{
         color: darkgreen;

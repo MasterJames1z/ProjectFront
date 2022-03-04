@@ -3,8 +3,8 @@
 <div class="orderN">
     <p>Order <%= n %></p>
 </div>
-<img class="statusImg" src="../IMG_1893.jpg" alt="<% orderList.menuName %>"/>
-<div class="imgText"><%= orderList.price %></div>
+<img class="statusImg" src="../<%= orderList.imgSource %>" alt="<% orderList.menuName %>"/>
+<div class="imgText <%= orderList.status + 'Price' %>"><%= orderList.price %></div>
 <div class="container-md menuStat row">
     <div class="col-6">
         <p class="statusText"><%= orderList.menuName %></p> 
