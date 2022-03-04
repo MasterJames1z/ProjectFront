@@ -3,7 +3,7 @@
 <div class="orderN">
     <p>Order <%= n %></p>
 </div>
-<img class="statusImg" src="../IMG_1893.jpg"/>
+<img class="statusImg" src="../IMG_1893.jpg" alt="<% orderList.menuName %>"/>
 <div class="imgText"><%= orderList.price %></div>
 <div class="container-md menuStat row">
     <div class="col-6">
@@ -13,9 +13,9 @@
         <p class="statusText"><%= orderList.status %></p> 
     </div>
 </div>
-<% if(orderList.status != "canceled"){ %>
+<% if(orderList.status == "queue"){ %>
     <div class="row justify-content-center">
-        <button class="btn canceledBtn col-10">Canceled</button>
+        <button class="btn canceledBtn col-10">Cancel this order</button>
     </div>
 <% } %>
 <hr class="sepp">

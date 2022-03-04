@@ -2,8 +2,12 @@
  <div class="container">
     <h1>Status order</h1>
 </div>
+<% if(orderList.length > 0){ %>
     <% for(i = 0; i < orderList.length; i++){ %>
             <%- include("partials/status", {orderList: orderList[i], n: i + 1}); %>
     <% } %>
+<% }else{ %>
+    <p>no order</p>
+<% } %>
 
 <%- include("partials/footer", {active: "orderStatus"}); %>

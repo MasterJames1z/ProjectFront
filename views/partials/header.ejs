@@ -28,24 +28,26 @@
                         <ul class="navbar-nav">
                             <div class="container">
                                 <!-- search box is HERE! -->
-                            <form class="form-inline row"> 
-                                <div class="container col-md-11 col-10">
-                                    <input class="form-control mr-sm-2 searchBox" type="search" placeholder="Search" aria-label="Search">
-                                </div>
-                                <button class="btn searchBtn col-md-1 col-2" type="submit"><i class="bi bi-search"></i></button>
-                            </form>
-
+                                <form class="form-inline row"> 
+                                    <div class="container col-md-11 col-10">
+                                        <input class="form-control mr-sm-2 searchBox" type="search" placeholder="Search" aria-label="Search">
+                                    </div>
+                                    <button class="btn searchBtn col-md-1 col-2" type="submit"><i class="bi bi-search"></i></button>
+                                </form>
                             </div>
-                            <div class="container navContent">By category:</div>
-                            <% var first = true %>
-                            <% category.forEach(function(category){ %>
-                                <% if(!first){ %>
-                                    <hr>
-                                <% }else{ first = false }%>
+                            <div class="links">
                                 <li class="nav-item active">
-                                    <a class="nav-link" href="/<%= category.category %>"><%= category.category %></a>
+                                    <a class="nav-link" href="/">All menu category</a>
                                 </li>
-                            <% }); %>
+                                <% category.forEach(function(category){ %>
+                                    <hr>
+                                    <div class="container">
+                                        <li class="nav-item active">
+                                            <a class="nav-link" href="/<%= category.category %>"><%= category.category %></a>
+                                        </li
+                                    ></div>
+                                <% }); %>
+                            </div>
                         </ul>
                     </div>
                 </div>

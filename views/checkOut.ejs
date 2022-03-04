@@ -1,0 +1,18 @@
+<%- include("partials/header",{title: "check out", category: menu}); %>
+<div class="container">
+    <h1>Check out</h1>
+    <div class="remarkBox">
+        <% orderList.forEach(function(order){ %>
+            <div class="row">
+                <p class="col-10"><%= order.menuName %></p>
+                <p class="col-2 price"><%= order.price %></p>
+            </div>
+            <ul>
+                <% order.remark.forEach(function(remark){ %>
+                    <li><%= remark %></li>
+                <% }); %>
+            </ul>
+        <% }); %>
+    </div>
+</div>
+<%- include("partials/footer", {active: "checkOut"}); %>

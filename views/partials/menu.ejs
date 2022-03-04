@@ -1,9 +1,9 @@
 <div class="col-md-6 col-lg-4">
     <a href="/<%= category %>/<%= menu.menuName %>" class="menuName">
         <div class="menuItem rounded">
-            <img class="menuImg rounded-top" src="<%= menu.imgSource %>">
+            <img class="menuImg rounded-top" src="<%= menu.imgSource %>" alt="<%= menu.menuName %>">
             <div class="container row far">
-                <p class="col-9"><%- menu.menuName %></p>
+                <p class="col-9"><%= menu.menuName %></p>
                 <p class="price col-3"><%= menu.price %></p>
             </div>
         </div>
