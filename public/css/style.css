@@ -1,11 +1,11 @@
 /* body */
     body{
-        background-color: lightgray;
+        background-color: whitesmoke;
         padding: 4.5rem 0 4.5rem;
         max-height: 100%;
     }
     html{
-        background-color: darkolivegreen;
+        background-color: #438F68;
     }
     a{
         text-decoration: none;
@@ -13,10 +13,13 @@
     a:hover{
         color: #000;
     }
+    .btn{
+        box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+    }
 
 /* kitchen UI */
     .orderBox{
-        background-color: whitesmoke; 
+        background-color: white; 
         border-radius: 5px;
         padding-top: 25px;
         padding-bottom: 25px;
@@ -28,33 +31,35 @@
         padding: 0 0 0 0 ;
     }
     .cooking{
-        background-color: coral;
-        border-radius: 5px;
-        padding: 0 5px 0 5px;
+        background-color: #F28705;
+        border-radius: 50px;
+        padding: 1px 15px 2px;
     }
     .queue{
-        background-color: aqua;
-        border-radius: 5px;
-        padding: 0 5px 0 5px;
+        background-color: #F2CB05;
+        border-radius: 50px;
+        padding: 1px 15px 2px;
     }
     .canceled{
-        background-color: gray;
-        border-radius: 5px;
-        padding: 0 5px 0 5px;
+        background-color: #5D8679;
+        border-radius: 50px;
+        padding: 1px 15px 2px;
+        color: #f1f1f1;
     }
     .served{
-        background-color: cornflowerblue ;
-        border-radius: 5px;
-        padding: 0 5px 0 5px;
+        background-color: #184C78;
+        border-radius: 50px;
+        padding: 1px 15px 2px;
+        color: #f1f1f1;
     }
     .changeBtn{
         width: fit-content;
-        background-color: darkolivegreen;
+        background-color: #5A9C56;
         color: white;
         border-radius: 5px;
     }
     .changeBtn:hover{
-        color: lightgray;
+        color: #fff;
     }
     .sorter{
         color:dimgray;
@@ -65,7 +70,7 @@
         text-align: center;
     }
     a.sorter:hover{
-        color: green;
+        color: #154666;
         text-decoration: underline;
     }
     ul{
@@ -74,14 +79,14 @@
 
 /* Customer navbar */
     .navbar{
-        background-color: darkolivegreen;
+        background-color: #438F68;
     }
     .navPos{
         height: 32px;
     }
     .nav-link{
-        color: lightgray;
-        font-size: larger;
+        color: #CFCFCF;
+        font-size:medium ;
     }
     .navContent{
         color: white;
@@ -89,11 +94,14 @@
         margin-top: 20px;
     }
     .navbar-toggler{
-        color: darkolivegreen;
+        color: #438F68;
     }
     .icon{
         color: white;
         font-size: x-large;
+    }
+    .searchBtn:hover{
+        color: whitesmoke;
     }
     hr{
         color: white;
@@ -107,10 +115,20 @@
         color: black;
         font-size: x-large;
     }
+    a.icon:hover{
+        color: #1f2f1f;
+    }
     .searchBtn{
-        background-color: chocolate;
+        background-color: #F28157;
         color: white;
         overflow: hidden;
+    }
+    .active{
+        color: white;
+        font-size: x-large;
+    }
+    .active:hover{
+        color: whitesmoke;
     }
 
 /* Customer UI */
@@ -126,7 +144,6 @@
         height: 95%;
     }
     .price{
-        color: darkgray;
         text-align: right;
     }
     .far{
@@ -149,7 +166,7 @@
         border-radius: 10px;
     }
     .confirm{
-        background-color: goldenrod;
+        background-color: #F28157;
         color: #fff;
     }
 
@@ -203,7 +220,7 @@
         width: 50px;
         border-radius: 50%;
         border-color: transparent;
-        background-color: darkolivegreen;
+        background-color: #438F68;
         color: #fff;
         font-size: 30px;
         padding-bottom: 6px;
@@ -221,14 +238,14 @@
     }
     input[type="text"]:focus {
         outline: none;
-        box-shadow: inset 0 -3px 0 0 darkolivegreen;; /* New item input underline color */
+        box-shadow: inset 0 -3px 0 0 #438F68;; /* New item input underline color */
     }
     ::placeholder {
         color: grey;
         opacity: 1;
     }
     .remarkBox{
-        background-color: darkseagreen;
+        background-color: #8AA6A3;
         padding: 25px 0 0;
         border-radius: 5px;
         box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
@@ -254,9 +271,9 @@
         text-align: right;
     }
     .statusText{
-        font-size: 20px;
         margin-bottom: 0;
-        padding-top: 12px;
+        font-size: 20px;
+        padding: 15px 0;
     }
     .imgText{
         position: absolute;
@@ -274,14 +291,20 @@
         padding: 0;
     }
     .cookingText{
-        color: coral;
+        color: #C46641;
     }
     .queueText{
-        color: aqua;
+        color: #F2CB05;
     }
     .canceledText{
-        color: gray;
+        color: #5D8679;
     }
     .servedText{
-        color: cornflowerblue;
+        color: #184C78;
+    }
+    .canceledBtn{
+        width: 80%;
+        background-color: #BF1304;
+        color: #fff;
+        margin-bottom: 30px;
     }

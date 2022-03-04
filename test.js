@@ -58,7 +58,6 @@ app.get("/:category/:menuName",function(req,res){
                     send.menuName = menu[i].menuList[j].menuName;
                     send.imgSource = menu[i].menuList[j].imgSource;
                     send.price = menu[i].menuList[j].price;
-                    console.log("found");
                 }
             } 
         }
@@ -67,7 +66,7 @@ app.get("/:category/:menuName",function(req,res){
 })
 
 app.get("/order%20status", function(req, res){
-    res.render("status", {order: order, menu: menu});
+    res.render("status", {orderList: orderList, menu: menu});
 })
 
 app.listen(3000,function(){
