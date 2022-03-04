@@ -150,8 +150,17 @@
     .price{
         text-align: right;
     }
-    .far{
-        padding: 15px;
+    .farBottom{
+        padding-bottom: 15px;
+    }
+    .table{
+        color: #4C5958;
+    }
+    .path{
+        color: #727F7D;
+    }
+    .path:hover{
+        color: #4C5958;
     }
 
 /* menu info */
@@ -308,4 +317,16 @@
         background-color: #BF1304;
         color: #fff;
         margin-bottom: 30px;
+    }
+/* check out */
+    .checkOutOrder{
+        background-color: #b8a57d;
+        padding: 50px;
+        color: #fff;
+        border-radius: 50px;
+        box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+    }
+    .checkOutBtn{
+        background-color: #317A86;
+        color: #fff;
     }

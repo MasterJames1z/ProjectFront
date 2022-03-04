@@ -7,11 +7,11 @@ app.use(express.static("public"));
 //kitchen test
 var sort = true;
 var orderList = [ 
-    {table: 8, menuName: "ผัดกระเพา", remark: ["หอมมะลิ", "หมูกรอบ", "ไข่ข้น"], status: "cooking"}, 
-    {table: 5, menuName: "ผัดผัก", remark: ["ไม่ใส่ผัก", "ใส่หมูเยอะๆ"], status: "queue"},
-    {table: 7, menuName: "ผัดไท", remark: ["ผัดไทเป็นคาร์โบมะ", "กุ้งเยอะ", "ขอถูกๆ"], status: "served"},
-    {table: 6, menuName: "ผัดอเวจี", remark: ["ส่งจากท่านยม", "กินชาตินี้อิ่มชาติหน้า"], status: "canceled"},
-    {table: 3, menuName: "ผัดขี้เมา", remark: ["ใส่แอลกอฮอล์"], status: "queue"}
+    {table: 8, menuName: "ผัดกระเพา", remark: ["หอมมะลิ", "หมูกรอบ", "ไข่ข้น"], status: "cooking", price: "50฿"}, 
+    {table: 5, menuName: "ผัดผัก", remark: ["ไม่ใส่ผัก", "ใส่หมูเยอะๆ"], status: "queue", price: "25฿"},
+    {table: 7, menuName: "ผัดไท", remark: ["ผัดไทเป็นคาร์โบมะ", "กุ้งเยอะ", "ขอถูกๆ"], status: "served", price: "80฿"},
+    {table: 6, menuName: "ผัดอเวจี", remark: ["ส่งจากท่านยม", "กินชาตินี้อิ่มชาติหน้า"], status: "canceled", price: "666฿"},
+    {table: 3, menuName: "ผัดขี้เมา", remark: ["ใส่แอลกอฮอล์"], status: "queue", price: "50฿"}
 ];
 //customer test
 var menu = [
@@ -58,7 +58,7 @@ app.get("/:category", function(req,res){
     res.render("category", {category: req.params.category, menu: menu})
 })
 app.get("/:category/:menuName",function(req,res){
-    var send = {menuName: '"' + req.params.menuName + '" does not exist', imgSource: "no image", price: "--฿", menu: menu}
+    var send = {menuName: '"' + req.params.menuName + '" does not exist', imgSource: "no image", price: "--฿", menu: menu, category: req.params.category}
     for(var i = 0; i < menu.length; i++){
         if(menu[i].category == req.params.category){
             for(var j = 0; j < menu[i].menuList.length; j++){

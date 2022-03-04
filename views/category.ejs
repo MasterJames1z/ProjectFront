@@ -1,11 +1,17 @@
 <!-- only category -->
 <%- include("partials/header",{title: category, category: menu}); %>
 <div class="container">
-    <div class="container"><a>path</a></div>
+    <div class="container">
+        <a class="table" href="#">Table 8</a>
+        <span class="table"> | </span>
+        <a class="path" href="/">Menu</a> 
+        <span class="path"> > </span>
+        <a class="path" href="/<%= category %>"><%= category%></a>
+    </div>
     <div class="row" >
         <% menu.forEach(function(menu){ %>
             <% if(menu.category == category){ %>
-                <h1 class="far"><%= category %></h1>
+                <h1 class="farBottom"><%= category %></h1>
                 <% menu.menuList.forEach(function(menuList){ %>
                     <%- include("partials/menu",{ menu: menuList, category: category.category}) %>
                 <% }); %>
