@@ -1,0 +1,42 @@
+body{
+    background-color: #438F68;
+}
+.img{
+    background-image: url("/foodPic.jpeg");
+    min-height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.input{
+    height: 500px;
+    text-align: center;
+    background-color: #438F68;
+    padding: 50px;
+}
+.sai{
+    padding-top: 50px;
+    background-color: #438f6888;
+}
+.saiGua{
+    padding-top: 50px;
+    background-color: #438f6866;
+}
+.chid{
+    text-align: left;
+}
+#goBtn{
+    background-color: #F28157;
+    color: #fff;
+    margin-left: 25px;
+}
+#tableSelect{
+    width: 150px;
+    border-color: #438F68;
+    padding: 5px;
+}
+.welcome{
+    color: #fff;
+}

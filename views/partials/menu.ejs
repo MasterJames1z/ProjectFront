@@ -1,10 +1,11 @@
-<div class="col-md-6 col-lg-4">
+<div class="col-md-6 col-lg-4" style="position: relative;">
     <a href="/<%= category %>/<%= menu.menuName %>" class="menuName">
         <div class="menuItem rounded">
-            <img class="menuImg rounded-top" src="<%= menu.imgSource %>" alt="<%= menu.menuName %>">
+            <img class="menuImg  rounded-top" src="<%= menu.imgSource %>" alt="<%= menu.menuName %>">
+            <p class="menuJustify imgText"><%= menu.price %></p>
             <div class="container row far">
-                <p class="col-9"><%= menu.menuName %></p>
-                <p class="price col-3"><%= menu.price %></p>
+                <p class="noMargin"><%= menu.menuName %></p>
+                <hr class="menuSepp">         
             </div>
         </div>
     </a>

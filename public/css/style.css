@@ -3,6 +3,7 @@
         background-color: whitesmoke;
         padding: 4.5rem 0 4.5rem;
         min-height: 100%;
+        min-width: 100%;
     }
     html{
         background-color: #438F68;
@@ -28,20 +29,25 @@
     .replace{
         padding: 30px;
     }
+    .noMargin{
+        margin: 0;
+    }
 
 /* kitchen UI */
     .orderBox{
         background-color: white; 
-        border-radius: 10px;
+        border-radius: 0 10px 10px 0;
         padding-top: 25px;
         padding-bottom: 25px;
         box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
     }
     .pic{
-        width: 80%;
         height: 200px;
         padding: 0 0 0 0 ;
         object-fit: cover;
+        height: inherit;
+        border-radius: 10px 0 0 10px;
+        box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
     }
     .cooking{
         background-color: #F28705;
@@ -176,7 +182,7 @@
         background-color: white;
         margin-bottom: 24px;
         box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
-        height: 95%;
+        height: inherit;
     }
     .price{
         text-align: right;
@@ -198,6 +204,12 @@
     }
     .path:hover{
         color: #4C5958;
+    }
+    .menuSepp{
+        color: #438F68;
+        margin-bottom: 20px;
+        padding: 1px;
+        opacity: .1;
     }
 
 /* menu info */
@@ -221,11 +233,16 @@
 /* UI */
     .menuName{
         margin-top: 25px;
-        font-size: xx-large;
+        font-size: 20px;
         color: #000;
     }
     .nav-link:hover{
         color: white;
+    }
+    .menuName2{
+        margin-top: 0;
+        font-size: 20px;
+        color: #000;
     }
 
 /* to do list */
@@ -293,6 +310,7 @@
         opacity: 1;
     }
     .remarkBox{
+        margin-top: 16px;
         background-color: #b8a57d;
         padding: 25px 0;
         border-radius: 10px;
@@ -326,7 +344,7 @@
     .imgText{
         position: absolute;
         bottom: 70px;
-        right: 20px;
+        right: 30px;
         color: darkgreen;
         background-color: rgba(255, 255, 255, .5);
         padding: 0 15px;
@@ -383,4 +401,8 @@
         font-weight: bold;       
         font-size: 30px;
         text-align: center;
+    }
+/* cutomer UI(ต่อ) */ 
+    .menuJustify{
+        right: 20px;
     }

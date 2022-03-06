@@ -36,7 +36,8 @@ var menu = [
 ];
 
 app.get("/", function(req,res){
-    res.render("home",{menu: menu});
+    res.sendFile(__dirname + "/tableSelect.html")
+    //res.render("home",{menu: menu});
 })
 
 app.get("/resort", function(req,res){
