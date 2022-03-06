@@ -13,7 +13,7 @@
     <div class="row justify-content-center">
         <img class="menuInfoImg col-12 col-md-9" src="../<%= imgSource %>" alt="<% menuName %>">
     </div>
-    <div class="menuName row justify-content-center">
+    <div class="container menuName row justify-content-center">
         <p class="col-8 col-md-6 "><%= menuName %></p>
         <p class="price col-4 col-md-3"><%= price %></p>
     </div>
@@ -44,12 +44,12 @@
                     <!-- to do list -->
                 </div>
             </div>
-            <button class="btn col-md-9 col-12 confirm confirmBtn"> Confirm <%= price %> </button>
+            <div class="replace"></div>
+            <div class="row justify-content-center floatBtn">
+                <button class="btn col-md-9 col-11 confirmBtn confirm confirmBtn"> Confirm <%= price %> </button>
+            </div>
         </div>
     </div>
-
-    
-
 </div>
 
 <%- include("partials/footer", {active: "home"}); %>

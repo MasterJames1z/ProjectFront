@@ -7,8 +7,14 @@
         <a class="path" href="/">Menu</a> 
     </div>
     <div class="row" >
+        <% var first = true %>
         <% menu.forEach(function(category){ %>
-            <h1 class="farBottom"><%= category.category %></h1>
+            <% if(!first){ %>
+                <div class="farTop">
+                    <hr class="sepp">                
+                </div>
+            <% }else{ first = false } %>
+            <h1 class="farBottom farTop"><%= category.category %></h1>
             <% category.menuList.forEach(function(menuList){ %>
                 <%- include("partials/menu",{ menu: menuList, category: category.category}) %>
             <% }); %>

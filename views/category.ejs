@@ -13,7 +13,7 @@
     <div class="row" >
         <% menu.forEach(function(menu){ %>
             <% if(menu.category == category){ %>
-                <h1 class="farBottom"><%= category %></h1>
+                <h1 class="farBottom farTop"><%= category %></h1>
                 <% menu.menuList.forEach(function(menuList){ %>
                     <%- include("partials/menu",{ menu: menuList, category: category.category}) %>
                 <% }); %>

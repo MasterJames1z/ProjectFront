@@ -27,8 +27,9 @@
             <% if(sort){ %>
                 <!-- sort by status -->
                 <% var unavailable = true %> 
-                    <div class="container-md">
-                        <h1>Cooking</h1>
+                    <div class="container-md fitContent">
+                        <span class="dotCooking">&#x25CF</span>                        
+                        <h1>&nbsp Cooking</h1>
                     </div>
                 <% orderList.forEach( function(orderList){ %>
                     <% if(orderList.status == "cooking"){ %>
@@ -39,8 +40,9 @@
                 <% if(unavailable){ %>
                     <p class="noOrder">There is no order in this category</p>
                 <% }else{ unavailable = true } %> 
-                    <div class="container-md">
-                        <h1>Queue</h1>
+                    <div class="container-md fitContent">
+                        <span class="dotQueue">&#x25CF</span>                        
+                        <h1>&nbsp Queue</h1>
                     </div>
                 <% orderList.forEach( function(orderList){ %>
                     <% if(orderList.status == "queue"){ %>
@@ -51,8 +53,9 @@
                 <% if(unavailable){ %>
                     <p class="noOrder">There is no order in this category</p>
                 <% }else{ unavailable = true } %> 
-                    <div class="container-md">
-                        <h1>Served</h1>
+                    <div class="container-md fitContent">
+                        <span class="dotServed">&#x25CF</span>                        
+                        <h1>&nbsp Served</h1>
                     </div>
                 <% orderList.forEach( function(orderList){ %>
                     <% if(orderList.status == "served"){ %>
@@ -63,8 +66,9 @@
                 <% if(unavailable){ %> 
                     <p  class="noOrder">There is no order in this category</p>
                 <% }else{ unavailable = true } %> 
-                    <div class="container-md">
-                        <h1>Canceled</h1>
+                    <div class="container-md fitContent">
+                         <span class="dotCanceled">&#x25CF</span>                       
+                        <h1>&nbsp Canceled</h1>
                     </div>
                 <% orderList.forEach( function(orderList){ %>
                     <% if(orderList.status == "canceled"){ %>

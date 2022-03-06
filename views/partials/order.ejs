@@ -2,15 +2,18 @@
     <div class="container justify-content-center orderBox" id=""><!-- <<  order box-->
         <div class="row justify-content-center">
             <div class="row col-md-10 col-xs-12" >
-                <h1 class="col-6 ">Table <%= orderInfo.table %></h1>
-                <p class="col-6" style="text-align: right;">status: <span class="<%= orderInfo.status %>"><%= orderInfo.status %></span></p>
+                <h1 class="col-5 farBottom">Table <%= orderInfo.table %></h1>
+                <p class="col-7" style="text-align: right;">status: <span class="<%= orderInfo.status %>"><%= orderInfo.status %></span></p>
             </div>
             <div class="row col-md-10 col-xs-12 justify-content-center">
 
-                <img src="<%= orderInfo.imgSource %>" class="col-3 pic">
-                <div class="col-9">
+                <img src="<%= orderInfo.imgSource %>" class="col-12 pic">
+                <div class="col-12">
                     <!-- order list -->
-                    <p class="menuName"><%= orderInfo.menuName %></p>
+                    <div class="row">
+                        <p class="menuName col-8"><%= orderInfo.menuName %></p>
+                        <p class="menuName price col-4"><%= orderInfo.price %></p>
+                    </div>
                     <ul>
                         <% orderInfo.remark.forEach(function(remark){ %>
                             <li><%= remark %></li>

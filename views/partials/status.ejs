@@ -1,23 +1,20 @@
-<div class="container-md order">
-
 <div class="orderN">
     <p>Order <%= n %></p>
 </div>
-<img class="statusImg" src="../<%= orderList.imgSource %>" alt="<% orderList.menuName %>"/>
-<div class="imgText <%= orderList.status + 'Price' %>"><%= orderList.price %></div>
-<div class="container-md menuStat row">
-    <div class="col-6">
-        <p class="statusText"><%= orderList.menuName %></p> 
-    </div>
-    <div class="col-6 status <%= orderList.status + 'Text' %>">
-        <p class="statusText"><%= orderList.status %></p> 
+<div class="container">
+    <img class="statusImg" src="../<%= orderList.imgSource %>" alt="<% orderList.menuName %>"/>
+    <div class="imgText <%= orderList.status + 'Price' %>"><%= orderList.price %></div>
+    <div class="container-md menuStat row">
+        <div class="col-6">
+            <p class="statusText"><%= orderList.menuName %></p> 
+        </div>
+        <div class="col-6 status <%= orderList.status + 'Text' %>">
+            <p class="statusText bold"><%= orderList.status %></p> 
+        </div>
     </div>
 </div>
 <% if(orderList.status == "queue"){ %>
     <div class="row justify-content-center">
-        <button class="btn canceledBtn col-10">Cancel this order</button>
+        <button class="btn canceledBtn ">Cancel this order</button>
     </div>
 <% } %>
-<hr class="sepp">
-
-</div>

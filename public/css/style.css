@@ -17,19 +17,31 @@
     .btn{
         box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
     }
+    .floatBtnDiv{
+        position: relative;
+    }
+    .floatBtn{
+        position: fixed;
+        width: 100%;
+        bottom: 65px;
+    }
+    .replace{
+        padding: 30px;
+    }
 
 /* kitchen UI */
     .orderBox{
         background-color: white; 
-        border-radius: 5px;
+        border-radius: 10px;
         padding-top: 25px;
         padding-bottom: 25px;
         box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
     }
     .pic{
-        width: 25%;
-        height: auto;
+        width: 80%;
+        height: 200px;
         padding: 0 0 0 0 ;
+        object-fit: cover;
     }
     .cooking{
         background-color: #F28705;
@@ -76,6 +88,25 @@
     }
     ul{
         list-style-type: none;
+    }
+    .dotCooking{
+        font-size: 15px;
+        color: #F28705;
+    }
+    .dotQueue{
+        font-size: 15px;
+        color: #F2CB05;
+    }
+    .dotServed{
+        font-size: 15px;
+        color: #184C78;
+    }
+    .dotCanceled{
+        font-size: 15px;
+        color: #5D8679;
+    }
+    .fitContent{
+        display: flex;
     }
 
 /* Customer navbar */
@@ -138,7 +169,7 @@
 /* Customer UI */
     .menuImg{
         width: 100%;
-        height: 20rem;
+        height: 200px;
         object-fit: cover;
     }
     .menuItem{
@@ -152,6 +183,12 @@
     }
     .farBottom{
         padding-bottom: 15px;
+    }
+    .farTop{
+        padding-top: 20px;
+    }
+    .far{
+        padding-top: 5px;
     }
     .table{
         color: #4C5958;
@@ -196,7 +233,7 @@
         max-width: 400px;
         margin: 0 auto 50px;
         background: white;
-        border-radius: 5px;
+        border-radius: 10px;
         box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
     }
     .item {
@@ -258,7 +295,7 @@
     .remarkBox{
         background-color: #b8a57d;
         padding: 25px 0;
-        border-radius: 5px;
+        border-radius: 10px;
         box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
     }
 /* status */
@@ -288,9 +325,12 @@
     }
     .imgText{
         position: absolute;
-        bottom: 65px;
-        right: 40px;
+        bottom: 70px;
+        right: 20px;
         color: darkgreen;
+        background-color: rgba(255, 255, 255, .5);
+        padding: 0 15px;
+        border-radius: 50px;
     }
     .queuePrice{
         bottom: 135px;
@@ -325,12 +365,22 @@
 /* check out */
     .checkOutOrder{
         background-color: #b8a57d;
-        padding: 50px;
+        padding: 35px 0;
         color: #fff;
-        border-radius: 50px;
+        border-radius: 10px;
         box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
     }
     .checkOutBtn{
         background-color: #317A86;
         color: #fff;
+    }
+    .bold{
+        font-weight: bold;
+        font-size: 20px;
+        margin-bottom: 0;
+    }
+    .tableCheckOut{
+        font-weight: bold;       
+        font-size: 30px;
+        text-align: center;
     }

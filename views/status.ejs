@@ -1,10 +1,18 @@
 <%- include("partials/header",{title: "Order status", category: menu}); %>
- <div class="container">
+ <div class="container farTop">
     <h1>Status order</h1>
 </div>
 <% if(orderList.length > 0){ %>
+    <% var first = true %>
     <% for(i = 0; i < orderList.length; i++){ %>
+        <div class="container-md order">
+            <% if(!first){ %>
+                <div class="farTop">
+                    <hr class="sepp">                
+                </div>
+            <% }else{ first = false } %>
             <%- include("partials/status", {orderList: orderList[i], n: i + 1}); %>
+        </div>
     <% } %>
 <% }else{ %>
     <p>no order</p>
