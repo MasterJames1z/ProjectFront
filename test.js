@@ -37,9 +37,10 @@ var menu = [
 
 app.get("/", function(req,res){
     res.sendFile(__dirname + "/tableSelect.html")
-    //res.render("home",{menu: menu});
 })
-
+app.get("/menu", function(req,res){
+    res.render("home",{menu: menu});
+})
 app.get("/resort", function(req,res){
     sort = !sort;
     res.redirect("/");
@@ -47,16 +48,16 @@ app.get("/resort", function(req,res){
 app.get("/kitchen", function(req,res){
     res.render("kitchen", {orderList: orderList, sort: sort});
 })
-app.get("/order%20status", function(req, res){
+app.get("/menu/order%20status", function(req, res){
     res.render("status", {orderList: orderList, menu: menu});
 })
-app.get("/check%20out", function(req,res){
+app.get("/menu/check%20out", function(req,res){
     res.render("checkOut", {orderList: orderList, menu: menu})
 })
-app.get("/:category", function(req,res){
+app.get("/menu/:category", function(req,res){
     res.render("category", {category: req.params.category, menu: menu})
 })
-app.get("/:category/:menuName",function(req,res){
+app.get("/menu/:category/:menuName",function(req,res){
     var send = {menuName: '"' + req.params.menuName + '" does not exist', imgSource: "no image", price: "--฿", menu: menu, category: req.params.category}
     for(var i = 0; i < menu.length; i++){
         if(menu[i].category == req.params.category){

@@ -11,7 +11,7 @@ body{
     position: relative;
 }
 .input{
-    height: 500px;
+    height: 400px;
     text-align: center;
     background-color: #438F68;
     padding: 50px;
@@ -26,6 +26,9 @@ body{
 }
 .chid{
     text-align: left;
+}
+p.welcome{
+    padding-top: 60px;
 }
 #goBtn{
     background-color: #F28157;
