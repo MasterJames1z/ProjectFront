@@ -1,0 +1,409 @@
+/* body */
+    body{
+        background-color: whitesmoke;
+        padding: 4.5rem 0 4.5rem;
+        min-height: 100%;
+        min-width: 100%;
+        font-family: 'Kanit', sans-serif;
+    }
+    html{
+        background-color: #438F68;
+        height: 100%;
+    }
+    a{
+        text-decoration: none;
+    }
+    a:hover{
+        color: #000;
+    }
+    .btn{
+        box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+    }
+    .floatBtnDiv{
+        position: relative;
+    }
+    .floatBtn{
+        position: fixed;
+        width: 100%;
+        bottom: 65px;
+    }
+    .replace{
+        padding: 30px;
+    }
+    .noMargin{
+        margin: 0;
+    }
+
+/* kitchen UI */
+    .orderBox{
+        background-color: white; 
+        border-radius: 0 10px 10px 0;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+    }
+    .pic{
+        height: 200px;
+        padding: 0 0 0 0 ;
+        object-fit: cover;
+        height: inherit;
+        border-radius: 10px 0 0 10px;
+        box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+    }
+    .cooking{
+        background-color: #F28705;
+        border-radius: 50px;
+        padding: 1px 15px 2px;
+    }
+    .queue{
+        background-color: #F2CB05;
+        border-radius: 50px;
+        padding: 1px 15px 2px;
+    }
+    .canceled{
+        background-color: #5D8679;
+        border-radius: 50px;
+        padding: 1px 15px 2px;
+        color: #f1f1f1;
+    }
+    .served{
+        background-color: #184C78;
+        border-radius: 50px;
+        padding: 1px 15px 2px;
+        color: #f1f1f1;
+    }
+    .changeBtn{
+        width: fit-content;
+        background-color: #5A9C56;
+        color: white;
+        border-radius: 5px;
+    }
+    .changeBtn:hover{
+        color: #fff;
+    }
+    .sorter{
+        color:dimgray;
+        text-decoration: none;
+        margin-bottom: 0;
+    }
+    .noOrder{
+        text-align: center;
+    }
+    a.sorter:hover{
+        color: #154666;
+        text-decoration: underline;
+    }
+    ul{
+        list-style-type: none;
+    }
+    .dotCooking{
+        font-size: 15px;
+        color: #F28705;
+    }
+    .dotQueue{
+        font-size: 15px;
+        color: #F2CB05;
+    }
+    .dotServed{
+        font-size: 15px;
+        color: #184C78;
+    }
+    .dotCanceled{
+        font-size: 15px;
+        color: #5D8679;
+    }
+    .fitContent{
+        display: flex;
+    }
+
+/* Customer navbar */
+    .navbar{
+        background-color: #438F68;
+    }
+    .navPos{
+        height: 32px;
+    }
+    .nav-link{
+        color: #CFCFCF;
+        font-size:medium ;
+    }
+    .navContent{
+        color: white;
+        font-size: smaller;
+        margin-top: 20px;
+    }
+    .navbar-toggler{
+        color: #438F68;
+    }
+    .icon{
+        color: white;
+        font-size: x-large;
+    }
+    .searchBtn:hover{
+        color: whitesmoke;
+    }
+    hr{
+        color: white;
+        margin: 0;
+    }
+    #restaurantName{
+        color: white;
+        text-align: center;
+    }
+    a.icon{
+        color: black;
+        font-size: x-large;
+    }
+    a.icon:hover{
+        color: #1f2f1f;
+    }
+    .searchBtn{
+        background-color: #F28157;
+        color: white;
+        overflow: hidden;
+    }
+    .active{
+        color: white;
+        font-size: x-large;
+    }
+    .active:hover{
+        color: whitesmoke;
+    }
+    .links{
+        padding-top: 15px;
+    }
+
+/* Customer UI */
+    .menuImg{
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+    .menuItem{
+        background-color: white;
+        margin-bottom: 24px;
+        box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+        height: inherit;
+    }
+    .price{
+        text-align: right;
+    }
+    .farBottom{
+        padding-bottom: 15px;
+    }
+    .farTop{
+        padding-top: 20px;
+    }
+    .far{
+        padding-top: 5px;
+    }
+    .table{
+        color: #4C5958;
+    }
+    .path{
+        color: #727F7D;
+    }
+    .path:hover{
+        color: #4C5958;
+    }
+    .menuSepp{
+        color: #438F68;
+        margin-bottom: 20px;
+        padding: 1px;
+        opacity: .1;
+    }
+
+/* menu info */
+    .menuInfoImg{
+        margin-top: 20px;
+        height: auto;
+    }
+    .addRemark{
+        color: #fff;
+        font-size: 30px;
+    }
+    .confirmBtn{
+        margin-top: 30px;
+        border-radius: 10px;
+    }
+    .confirm{
+        background-color: #F28157;
+        color: #fff;
+    }
+
+/* UI */
+    .menuName{
+        margin-top: 25px;
+        font-size: 20px;
+        color: #000;
+    }
+    .nav-link:hover{
+        color: white;
+    }
+    .menuName2{
+        margin-top: 0;
+        font-size: 20px;
+        color: #000;
+    }
+
+/* to do list */
+    .box {
+        max-width: 400px;
+        margin: 0 auto 50px;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+    }
+    .item {
+        min-height: 70px;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid #F1F1F1;
+    } 
+    .item:last-child {
+        border-bottom: 0;
+    }
+    input:checked+p {
+        text-decoration: line-through;
+        text-decoration-color: red;
+    } 
+    input[type="checkbox"] {
+        margin: 20px;
+    }
+    .remark {
+        margin: 0;
+        padding: 20px;
+        font-size: 20px;
+        font-weight: 200;
+        color: #000;
+    }
+    form.item {
+        text-align: center;
+        margin-left: 20px;
+    } 
+    .plusBtn {
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        border-color: transparent;
+        background-color: #438F68;
+        color: #fff;
+        font-size: 30px;
+        padding-bottom: 6px;
+        border-width: 0;
+    }   
+    input[type="text"] {
+        text-align: center;
+        height: 60px;
+        top: 10px;
+        border: none;
+        background: transparent;
+        font-size: 20px;
+        font-weight: 200;
+        width: 313px;
+    }
+    input[type="text"]:focus {
+        outline: none;
+        box-shadow: inset 0 -3px 0 0 #438F68;; /* New item input underline color */
+    }
+    ::placeholder {
+        color: grey;
+        opacity: 1;
+    }
+    .remarkBox{
+        margin-top: 16px;
+        background-color: #b8a57d;
+        padding: 25px 0;
+        border-radius: 10px;
+        box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+    }
+/* status */
+    .order{
+        position: relative;
+    }
+    .orderN{
+        background-color: darkgreen;
+        width: fit-content;
+        color: #fff;
+        font-size: 20px;
+        padding: 0 20px;
+        border-radius: 50px;
+    }
+    .statusImg{
+        width: 100%;
+        height: 15rem;
+        object-fit: cover;
+    }
+    .status{
+        text-align: right;
+    }
+    .statusText{
+        margin-bottom: 0;
+        font-size: 20px;
+        padding: 15px 0;
+    }
+    .imgText{
+        position: absolute;
+        bottom: 70px;
+        right: 30px;
+        color: darkgreen;
+        background-color: rgba(255, 255, 255, .5);
+        padding: 0 15px;
+        border-radius: 50px;
+    }
+    .queuePrice{
+        bottom: 135px;
+    }
+    .sepp{
+        color: darkgreen;
+        padding: 1px;
+        opacity: 1;
+        margin-bottom: 25px;
+    }
+    .menuStat{
+        padding: 0;
+    }
+    .cookingText{
+        color: #C46641;
+    }
+    .queueText{
+        color: #F2CB05;
+    }
+    .canceledText{
+        color: #5D8679;
+    }
+    .servedText{
+        color: #184C78;
+    }
+    .canceledBtn{
+        width: 80%;
+        background-color: #BF1304;
+        color: #fff;
+        margin-bottom: 30px;
+    }
+/* check out */
+    .checkOutOrder{
+        background-color: #b8a57d;
+        padding: 35px 0;
+        color: #fff;
+        border-radius: 10px;
+        box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+    }
+    .checkOutBtn{
+        background-color: #317A86;
+        color: #fff;
+    }
+    .bold{
+        font-weight: bold;
+        font-size: 20px;
+        margin-bottom: 0;
+    }
+    .tableCheckOut{
+        font-weight: bold;       
+        font-size: 30px;
+        text-align: center;
+    }
+/* cutomer UI(ต่อ) */ 
+    .menuJustify{
+        right: 20px;
+    }
