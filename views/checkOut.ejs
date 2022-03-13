@@ -9,7 +9,7 @@
                     <div class=" col-11 col-md-9">
                         <div class="row">
                             <p class="col-9 bold"><%= order.menuName %></p>
-                            <p class="col-3 price bold"><%= order.price %></p>
+                            <p class="col-3 price bold"><%= order.price %> ฿</p>
                             <%  console.log(order)%>
                         </div>
                         <ul>
@@ -19,6 +19,7 @@
                         </ul>
                     </div>
                 <% }); %>
+                <p class="col-9 price bold" >Total Price: <%= totalPrice %> ฿</p>
             </div>
         </div>
     </div>
@@ -31,4 +32,7 @@
         </div>
     </div>
 </div>
+<script>
+    // document.getElementsByName(totalPrice);
+</script>
 <%- include("partials/footer", {active: "checkOut"}); %>
