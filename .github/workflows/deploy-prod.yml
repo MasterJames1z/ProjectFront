@@ -3,6 +3,7 @@ name: Deploy app on prod
   push:
     branches:
       - prod
+jobs:
   docker:
     runs-on: ubuntu-latest
     steps:
