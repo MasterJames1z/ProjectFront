@@ -33,14 +33,14 @@ jobs:
         with:
           context: .
           push: true
-          tags: worawut111/projectDevop:latest
+          tags: worawut111/projectdevop:latest
 
       -
         name: Prepare docker-compose run
         run: |
-              mkdir projectDevop
-              cp docker-compose.yml projectDevop/docker-compose.yml
-              cd projectDevop
+              mkdir projectdevop
+              cp docker-compose.yml projectdevop/docker-compose.yml
+              cd projectdevop
               docker-compose -H ${{secrets.HOST_SERVER}} down
               docker-compose -H ${{secrets.HOST_SERVER}} pull
               docker-compose -H ${{secrets.HOST_SERVER}} up -d
