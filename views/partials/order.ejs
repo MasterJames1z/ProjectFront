@@ -7,15 +7,15 @@
                 <div class="row justify-content-center">
                     <div class="row col-md-10 col-xs-12" >
                         <h1 class="col-5 farBottom">Table <%= orderInfo.table %></h1>
-                        <p class="col-7" style="text-align: right;">status: 
-                            <span class="<%= orderInfo.status %>"><%= orderInfo.status %></span>
+                        <p  class="col-7" style="text-align: right;">status: 
+                            <span id="demo" class="<%= orderInfo.status %>"><%= orderInfo.status %></span>
                         </p>
                     </div>
                     <div class="row col-md-10 col-xs-12 justify-content-center">
                             <!-- order list -->
                         <div class="row">
                             <p class="menuName2 col-8"><%= orderInfo.menuName %></p>
-                            <p class="menuName2 price col-4"><%= orderInfo.price %></p>
+                            <p class="menuName2 price col-4"><%= orderInfo.price +'฿'%></p>
                         </div>
                         <div class="container">
                             <ul>
@@ -26,9 +26,9 @@
                         </div>
                     </div>
                     <% if(orderInfo.status == "queue" || orderInfo.status == "cooking"){ %>
-                        <div class="row col-md-10 col-xs-12 justify-content-end">
-                            <button type="submit" class="btn changeBtn">Change status</button>
-                        </div>
+                        <form action="/kitchen/change" method="post" class="row col-md-10 col-xs-12 justify-content-end">
+                            <button name="change" value='{"table":"<%= orderInfo.table %>" , "status":"<%= orderInfo.status %>","menuName":"<%= orderInfo.menuName%>"}' type="submit" class="btn changeBtn" >Change status</button>
+                        </form>
                     <% } %>
                 </div>
             </div>

@@ -1,38 +1,47 @@
-<%- include("partials/header",{title: "check out", category: menu}); %>
-<div class="container">
-    <h1 class="farTop farBottom">Check out</h1>
-    <div class="checkOutOrder">
-        <div class="container">
-            <div class="tableCheckOut farBottom">Table 8</div>
-            <div class="row justify-content-center">
-                <% orderList.forEach(function(order){ %>
-                    <div class=" col-11 col-md-9">
-                        <div class="row">
-                            <p class="col-9 bold"><%= order.menuName %></p>
-                            <p class="col-3 price bold"><%= order.price %> ฿</p>
-                            <%  console.log(order)%>
-                        </div>
-                        <ul>
-                            <% order.remark.forEach(function(remark){ %>
-                                <li><%= remark %></li>
-                            <% }); %>
-                        </ul>
-                    </div>
-                <% }); %>
-                <p class="col-9 price bold" >Total Price: <%= totalPrice %> ฿</p>
-            </div>
-        </div>
-    </div>
-    <div class="replace"></div>
+<%- include("partials/header",{title: "check out" , category: menu}); %>
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="row justify-content-center floatBtn">
-                <button class="btn col-md-9 col-11 confirm confirmBtn checkOutBtn">check out</button>
+        <h1 class="farTop farBottom">Check out</h1>
+        <div class="checkOutOrder">
+            <div class="container">
+                <div class="tableCheckOut farBottom">Table <%= table %>
+                </div>
+                <div class="row justify-content-center">
+                    <% var totalPrice=0; %>
+                        <% orderList.forEach(function(order){ %>
+                            <div class=" col-11 col-md-9">
+                                <div class="row">
+                                    <p class="col-9 bold">
+                                        <%= order.menuName %>
+                                    </p>
+                                    <p class="col-3 price bold">
+                                        <%= order.price %> ฿
+                                    </p>
+                                    <% console.log(order)%>
+                                </div>
+                                <ul>
+                                    <% order.remark.forEach(function(remark){ %>
+                                        <li>
+                                            <%= remark %>
+                                        </li>
+                                        <% }); %>
+                                </ul>
+                            </div>
+                            <% totalPrice +=order.price %>
+                                <% }); %>
+                                    <p class="col-9 price bold">Total Price: <%= totalPrice %> ฿</p>
+                </div>
+            </div>
+        </div>
+        <div class="replace"></div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <form action="/checkout" method="post" class="row justify-content-center floatBtn">
+                    <button class="btn col-md-9 col-11 confirm confirmBtn checkOutBtn">check out</button>
+                </form>
             </div>
         </div>
     </div>
-</div>
-<script>
+    <script>
     // document.getElementsByName(totalPrice);
-</script>
-<%- include("partials/footer", {active: "checkOut"}); %>
+    </script>
+    <%- include("partials/footer", {active: "checkOut" }); %>

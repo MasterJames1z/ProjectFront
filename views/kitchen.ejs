@@ -1,107 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
-        <link href="/css/style.css" rel="stylesheet">
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200&display=swap" rel="stylesheet">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+    <link href="/css/style.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200&display=swap" rel="stylesheet">
 
 
-        <title>Kitchen UI</title>
-    </head>
-    <body>
-        <nav class="navbar fixed-top navbar-default">
-            <div class="container justify-content-center" >
-                <a href="#"><h1 id="restaurantName">B&J kitchen</h1></a>
+    <title>Kitchen UI</title>
+</head>
+
+<body>
+    <nav class="navbar fixed-top navbar-default">
+        <div class="container justify-content-center">
+            <a href="/">
+                <h1 id="restaurantName">B&J kitchen</h1>
+            </a>
+        </div>
+    </nav>
+    <!-- order list -->
+    <div class="container-md"></div>
+    <!-- sort status -->
+    <div class="container" style="text-align: right;">
+        <p class="sorter">
+            <a class="sorter" href="/kitchen"><i class="fa fa-refresh" aria-hidden=""></i> refresh</a>
+            |
+            <a class="sorter" href="/kitchen/resort">
+                sort by: <% if(sort){ %>status <% }else{ %>date <% } %>
+            </a>
+
+        </p>
+    </div>
+    <!-- dynamic order list -->
+    <% if(sort){ %>
+        <!-- sort by status -->
+        <% var unavailable=true %>
+            <div class="container-md fitContent">
+                <span class="dotCooking">&#x25CF</span>
+                <h1>&nbsp Cooking</h1>
             </div>
-        </nav>
-        <!-- order list -->
-        <div class="container-md"></div>
-            <!-- sort status -->
-            <div class="container" style="text-align: right;">
-                <p class="sorter">
-                    <a class="sorter" href="/kitchen"><i class="fa fa-refresh" aria-hidden=""></i> refresh</a>
-                     |  
-                    <a class="sorter" href="/kitchen/resort" > 
-                        sort by: <% if(sort){ %>status <% }else{ %>date <% } %>
-                    </a>
-                    
-                </p>
-            </div>
-            <!-- dynamic order list -->
-            <% if(sort){ %>
-                <!-- sort by status -->
-                <% var unavailable = true %> 
-                    <div class="container-md fitContent">
-                        <span class="dotCooking">&#x25CF</span>                        
-                        <h1>&nbsp Cooking</h1>
-                    </div>
-                <% orderList.forEach( function(orderList){ %>
-                    <% if(orderList.status == "cooking"){ %>
-                        <%- include("partials/order",{ orderInfo: orderList });%>
-                        <% unavailable = false %> 
-                    <% } %>
-                <% }); %>
-                <% if(unavailable){ %>
-                    <p class="noOrder">There is no order in this category</p>
-                <% }else{ unavailable = true } %> 
-                    <div class="container-md fitContent">
-                        <span class="dotQueue">&#x25CF</span>                        
-                        <h1>&nbsp Queue</h1>
-                    </div>
-                <% orderList.forEach( function(orderList){ %>
-                    <% if(orderList.status == "queue"){ %>
-                        <%- include("partials/order",{ orderInfo: orderList });%>
-                        <% unavailable = false %> 
-                    <% } %>
-                <% }); %>
-                <% if(unavailable){ %>
-                    <p class="noOrder">There is no order in this category</p>
-                <% }else{ unavailable = true } %> 
-                    <div class="container-md fitContent">
-                        <span class="dotServed">&#x25CF</span>                        
-                        <h1>&nbsp Served</h1>
-                    </div>
-                <% orderList.forEach( function(orderList){ %>
-                    <% if(orderList.status == "served"){ %>
-                        <%- include("partials/order",{ orderInfo: orderList });%>
-                        <% unavailable = false %> 
-                    <% } %>
-                <% }); %>
-                <% if(unavailable){ %> 
-                    <p  class="noOrder">There is no order in this category</p>
-                <% }else{ unavailable = true } %> 
-                    <div class="container-md fitContent">
-                         <span class="dotCanceled">&#x25CF</span>                       
-                        <h1>&nbsp Canceled</h1>
-                    </div>
-                <% orderList.forEach( function(orderList){ %>
-                    <% if(orderList.status == "canceled"){ %>
-                        <%- include("partials/order",{ orderInfo: orderList });%>
-                        <% unavailable = false %> 
-                    <% } %>
-                <% }); %>
-                <% if(unavailable){ %> 
-                    <p  class="noOrder">There is no order in this category</p>
-                <% }else{ unavailable = true } %>
-            <% }else{ %>
-                <!-- sort by date -->
-                <% orderList.forEach( function(orderList){ %>
+            <% orderList.forEach( function(orderList){ %>
+                <% if(orderList.status=="cooking" ){ %>
                     <%- include("partials/order",{ orderInfo: orderList });%>
-                <% }); %>
-            <% } %>
-           
-        </div>
-        <div class="container">
-            <div class="row justify-content-center">
-                <a class="sorter" href="/kitchen" style="text-align: center;"><i class="fa fa-refresh" aria-hidden=""></i> refresh</a>
-            </div>
-        </div>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    </body>
+                        <% unavailable=false %>
+                            <% } %>
+                                <% }); %>
+                                    <% if(unavailable){ %>
+                                        <p class="noOrder">There is no order in this category</p>
+                                        <% }else{ unavailable=true } %>
+                                            <div class="container-md fitContent">
+                                                <span class="dotQueue">&#x25CF</span>
+                                                <h1>&nbsp Queue</h1>
+                                            </div>
+                                            <% orderList.forEach( function(orderList){ %>
+                                                <% if(orderList.status=="queue" ){ %>
+                                                    <%- include("partials/order",{ orderInfo: orderList });%>
+                                                        <% unavailable=false %>
+                                                            <% } %>
+                                                                <% }); %>
+                                                                    <% if(unavailable){ %>
+                                                                        <p class="noOrder">There is no order in this
+                                                                            category</p>
+                                                                        <% }else{ unavailable=true } %>
+                                                                            <div class="container-md fitContent">
+                                                                                <span class="dotServed">&#x25CF</span>
+                                                                                <h1>&nbsp Served</h1>
+                                                                            </div>
+                                                                            <% orderList.forEach( function(orderList){
+                                                                                %>
+                                                                                <% if(orderList.status=="served" ){ %>
+                                                                                    <%- include("partials/order",{
+                                                                                        orderInfo: orderList });%>
+                                                                                        <% unavailable=false %>
+                                                                                            <% } %>
+                                                                                                <% }); %>
+                                                                                                    <% if(unavailable){
+                                                                                                        %>
+                                                                                                        <p
+                                                                                                            class="noOrder">
+                                                                                                            There is no
+                                                                                                            order in
+                                                                                                            this
+                                                                                                            category</p>
+                                                                                                        <% }else{
+                                                                                                            unavailable=true
+                                                                                                            } %>
+                                                                                                            <div
+                                                                                                                class="container-md fitContent">
+                                                                                                                <span
+                                                                                                                    class="dotCanceled">&#x25CF</span>
+                                                                                                                <h1>&nbsp
+                                                                                                                    Canceled
+                                                                                                                </h1>
+                                                                                                            </div>
+                                                                                                            <% orderList.forEach(
+                                                                                                                function(orderList){
+                                                                                                                %>
+                                                                                                                <% if(orderList.status=="canceled"
+                                                                                                                    ){
+                                                                                                                    %>
+                                                                                                                    <%- include("partials/order",{
+                                                                                                                        orderInfo:
+                                                                                                                        orderList
+                                                                                                                        });%>
+                                                                                                                        <% unavailable=false
+                                                                                                                            %>
+                                                                                                                            <% }
+                                                                                                                                %>
+                                                                                                                                <% });
+                                                                                                                                    %>
+                                                                                                                                    <% if(unavailable){
+                                                                                                                                        %>
+                                                                                                                                        <p
+                                                                                                                                            class="noOrder">
+                                                                                                                                            There
+                                                                                                                                            is
+                                                                                                                                            no
+                                                                                                                                            order
+                                                                                                                                            in
+                                                                                                                                            this
+                                                                                                                                            category
+                                                                                                                                        </p>
+                                                                                                                                        <% }else{
+                                                                                                                                            unavailable=true
+                                                                                                                                            }
+                                                                                                                                            %>
+                                                                                                                                            <% }else{
+                                                                                                                                                %>
+                                                                                                                                                <!-- sort by date -->
+                                                                                                                                                <% orderList.forEach(
+                                                                                                                                                    function(orderList){
+                                                                                                                                                    %>
+                                                                                                                                                    <%- include("partials/order",{
+                                                                                                                                                        orderInfo:
+                                                                                                                                                        orderList
+                                                                                                                                                        });%>
+                                                                                                                                                        <% });
+                                                                                                                                                            %>
+                                                                                                                                                            <% }
+                                                                                                                                                                %>
+
+                                                                                                                                                                </div>
+                                                                                                                                                                <div
+                                                                                                                                                                    class="container">
+                                                                                                                                                                    <div
+                                                                                                                                                                        class="row justify-content-center">
+                                                                                                                                                                        <a class="sorter"
+                                                                                                                                                                            href="/kitchen"
+                                                                                                                                                                            style="text-align: center;"><i
+                                                                                                                                                                                class="fa fa-refresh"
+                                                                                                                                                                                aria-hidden=""></i>
+                                                                                                                                                                            refresh</a>
+                                                                                                                                                                    </div>
+                                                                                                                                                                </div>
+                                                                                                                                                                <script
+                                                                                                                                                                    src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+                                                                                                                                                                    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+                                                                                                                                                                    crossorigin="anonymous"></script>
+</body>
+
 </html>

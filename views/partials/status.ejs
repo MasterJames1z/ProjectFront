@@ -3,7 +3,7 @@
 </div>
 <div class="container">
     <img class="statusImg" src="../<%= orderList.imgSource %>" alt="<% orderList.menuName %>"/>
-    <div class="imgText <%= orderList.status + 'Price' %>"><%= orderList.price %></div>
+    <div class="imgText <%= orderList.status + 'Price' %>"><%= orderList.price +'฿'%></div>
     <div class="container-md menuStat row">
         <div class="col-6">
             <p class="statusText"><%= orderList.menuName %></p> 
@@ -14,7 +14,13 @@
     </div>
 </div>
 <% if(orderList.status == "queue"){ %>
+    <div id="cancel">
+    <form action="/cancel" method="post">
     <div class="row justify-content-center">
-        <button class="btn canceledBtn ">Cancel this order</button>
-    </div>
+        
+        <button name="cancel" value='{"table": "8", "menuName":"<%= orderList.menuName %>" , "imgSource":"<%= orderList.imgSource %>", "price": "<%= orderList.price %>"}' class="btn canceledBtn ">Cancel this order</button>
+   </div> </form></div>
+   <script>
+       
+   </script>
 <% } %>

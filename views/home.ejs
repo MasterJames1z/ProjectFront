@@ -1,24 +1,26 @@
-<%- include("partials/header",{title: "menu", category: menu}); %>
-<div class="container">
+<%- include("partials/header",{title: "menu" , category: menu}); %>
     <div class="container">
+        <div class="container">
             <!-- path -->
-        <a class="table" href="/">Table 8</a>
-        <span class="table"> | </span>
-        <a class="path" href="/menu">Menu</a> 
+            <a id="table" class="table" href="/">Table <%= table %></a>
+            <span class="table"> | </span>
+            <a class="path" href="/menu">Menu</a>
+        </div>
+        <div class="row">
+            <% var first=true %>
+                <% menu.forEach(function(category){ %>
+                    <% if(!first){ %>
+                        <div class="farTop">
+                            <hr class="sepp">
+                        </div>
+                        <% }else{ first=false } %>
+                            <h1 class="farBottom farTop">
+                                <%= category.category %>
+                            </h1>
+                            <% category.menuList.forEach(function(menuList){ %>
+                                <%- include("partials/menu",{ menu: menuList, category: category.category}) %>
+                                    <% }); %>
+                                        <% }); %>
+        </div>
     </div>
-    <div class="row" >
-        <% var first = true %>
-        <% menu.forEach(function(category){ %>
-            <% if(!first){ %>
-                <div class="farTop">
-                    <hr class="sepp">                
-                </div>
-            <% }else{ first = false } %>
-            <h1 class="farBottom farTop"><%= category.category %></h1>
-            <% category.menuList.forEach(function(menuList){ %>
-                <%- include("partials/menu",{ menu: menuList, category: category.category}) %>
-            <% }); %>
-        <% }); %>
-    </div>
-</div>
-<%- include("partials/footer", {active: "home"}); %>
+    <%- include("partials/footer", {active: "home" }); %>
