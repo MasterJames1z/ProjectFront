@@ -1,4 +1,4 @@
-name: Deploy app on main
+name: Deploy app on prod
 'on':
   push:
     branches:
