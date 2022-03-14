@@ -32,14 +32,14 @@ name: Deploy app on main
         with:
           context: .
           push: true
-          tags: worawut111/projectdevop:latest
+          tags: worawut111/projectdevop-prod:latest
 
       -
         name: Prepare docker-compose run
         run: |
-              mkdir projectdevop
-              cp docker-compose.yml projectdevop/docker-compose.yml
-              cd projectdevop
+              mkdir projectdevop2
+              cp docker-compose-prod.yml projectdevop2/docker-compose.yml
+              cd projectdevop2
               docker-compose -H ${{secrets.HOST_SERVER}} down
               docker-compose -H ${{secrets.HOST_SERVER}} pull
               docker-compose -H ${{secrets.HOST_SERVER}} up -d

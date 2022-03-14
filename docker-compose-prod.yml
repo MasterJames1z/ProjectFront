@@ -1,6 +1,6 @@
 version: '3.3'
 services:
   project:
-    image: worawut111/projectdevop:latest
+    image: worawut111/projectdevop-prod:latest
     ports:
       - "8186:3000"

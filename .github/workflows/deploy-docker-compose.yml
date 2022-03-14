@@ -3,6 +3,7 @@ name: Deploy app on main
   push:
     branches:
       - main
+      
 jobs:
   docker:
     runs-on: ubuntu-latest
