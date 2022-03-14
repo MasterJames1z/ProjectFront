@@ -33,14 +33,14 @@ jobs:
         with:
           context: .
           push: true
-          tags: dockerIDของมึง/ชื่ออะไรก็ได้(anyname):latest
+          tags: worawut111/projectDevop:latest
 
       -
         name: Prepare docker-compose run
         run: |
-              mkdir ชื่อfolderอะไรก็ได้(any folder name)
-              cp docker-compose.yml ชื่อfolderที่ตั้งไป(folder name you create)/docker-compose.yml
-              cd ชื่อfolderที่ตั้งไป(folder name you create)
+              mkdir projectDevop
+              cp docker-compose.yml projectDevop/docker-compose.yml
+              cd projectDevop
               docker-compose -H ${{secrets.HOST_SERVER}} down
               docker-compose -H ${{secrets.HOST_SERVER}} pull
               docker-compose -H ${{secrets.HOST_SERVER}} up -d
