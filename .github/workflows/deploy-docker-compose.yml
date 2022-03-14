@@ -1,0 +1,46 @@
+name: Deploy app on main
+'on':
+  push:
+    branches:
+      - main
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      -
+        name: Checkout
+        uses: actions/checkout@v2
+
+      -
+        name: SetUp up Dpcker Buildx
+        uses: docker/setup-buildx-action@v1
+      
+      -
+        name: Login to DockerHub
+        uses: docker/login-action@v1
+        with:
+          username: ${{secrets.DOCKER_HUB_USERNAME}}
+          password: ${{secrets.DOCKER_HUB_TOKEN}}
+
+      -
+        name: Prepare docker-compose
+        run: |
+              ls -l
+
+      -
+        name: Build and push
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          push: true
+          tags: dockerIDของมึง/ชื่ออะไรก็ได้(anyname):latest
+
+      -
+        name: Prepare docker-compose run
+        run: |
+              mkdir ชื่อfolderอะไรก็ได้(any folder name)
+              cp docker-compose.yml ชื่อfolderที่ตั้งไป(folder name you create)/docker-compose.yml
+              cd ชื่อfolderที่ตั้งไป(folder name you create)
+              docker-compose -H ${{secrets.HOST_SERVER}} down
+              docker-compose -H ${{secrets.HOST_SERVER}} pull
+              docker-compose -H ${{secrets.HOST_SERVER}} up -d

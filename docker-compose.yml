@@ -1,0 +1,6 @@
+version: '3.3'
+services:
+  project:
+    image: worawut111/projectFrontend:latest
+    ports:
+      - "8185:3000"
